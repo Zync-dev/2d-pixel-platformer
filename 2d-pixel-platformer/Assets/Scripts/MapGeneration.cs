@@ -16,6 +16,10 @@ public class MapGeneration : MonoBehaviour
     void Start()
     {
         tileGrid = GameObject.FindGameObjectWithTag("TileGrid");
+
+        GameObject spawnedSegment = Instantiate(segments[0], tileGrid.transform);
+        spawnedSegment.transform.position = new Vector3(currentSegmentSpawnLocation, 0f, 0f);
+        currentSegmentSpawnLocation += segmentLength;
     }
 
     void Update()
